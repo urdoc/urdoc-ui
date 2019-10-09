@@ -1,4 +1,4 @@
-export * from './components/Input/Input';
-export * from './components/TextArea/TextArea';
-export * from './components/Select/Select';
-export * from './components/Button';
+export { Input } from './components/Input';
+export { TextArea } from './components/TextArea';
+export { Select } from './components/Select';
+export { Button } from './components/Button';

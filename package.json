@@ -1,7 +1,8 @@
 {
   "name": "urdoc-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
   "peerDependencies": {
     "@emotion/core": "^10.0.17",
@@ -40,6 +41,10 @@
   },
   "scripts": {
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "tsc --declaration",
+    "clean": "rimraf ./lib",
+    "release": "standard-version",
+    "release:dryrun": "standard-version --dry-run"
   }
 }

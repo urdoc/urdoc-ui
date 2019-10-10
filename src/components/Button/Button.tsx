@@ -85,6 +85,6 @@ const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
   };
 });
 
-export const Button: React.FC<Props> = ({ ...rest }) => {
-  return <StyledButton {...rest} />;
+export const Button: React.FC<Props> = props => {
+  return <StyledButton {...props} />;
 };

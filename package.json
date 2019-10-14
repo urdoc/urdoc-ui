@@ -1,9 +1,17 @@
 {
   "name": "urdoc-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook",
+    "build": "tsc --declaration",
+    "clean": "rimraf ./lib",
+    "release": "standard-version",
+    "release:dryrun": "standard-version --dry-run"
+  },
   "peerDependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
@@ -17,7 +25,8 @@
     "@types/react-color": "^3.0.1",
     "@types/storybook__react": "^4.0.2",
     "lodash.merge": "^4.6.2",
-    "react-color": "^2.17.3"
+    "react-color": "^2.17.3",
+    "standard-version": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -38,13 +47,5 @@
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "typescript": "^3.6.2"
-  },
-  "scripts": {
-    "storybook": "start-storybook",
-    "build-storybook": "build-storybook",
-    "build": "tsc --declaration",
-    "clean": "rimraf ./lib",
-    "release": "standard-version",
-    "release:dryrun": "standard-version --dry-run"
   }
 }

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
   size?: 'small' | 'medium' | 'big';
   fluid?: boolean;
-  color?: 'gray' | 'blue' | 'grayishCyan'; // default is grayishCyan
+  color?: 'gray' | 'blue' | 'grayishCyan' | 'green' | 'red'; // default is grayishCyan
 };
 
 const master_sizes = {
@@ -27,16 +27,24 @@ const master_sizes = {
 
 const master_colros = {
   grayishCyan: {
-    color: '#fff',
+    color: '#ffffff',
     backgroundColor: '#a3bdcd',
   },
   gray: {
-    color: '#fff',
+    color: '#ffffff',
     backgroundColor: '#adabab',
   },
   blue: {
-    color: '#fff',
+    color: '#ffffff',
     backgroundColor: '#0071bc',
+  },
+  green: {
+    color: '#ffffff',
+    backgroundColor: '#50E68A',
+  },
+  red: {
+    color: '#ffffff',
+    backgroundColor: '#E65050',
   },
 };
 

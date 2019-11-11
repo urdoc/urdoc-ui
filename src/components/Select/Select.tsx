@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 
-// import openIcon from '../../resources/245.svg';
 import icon from './selectIcon';
 
 type Props = React.PropsWithRef<JSX.IntrinsicElements['select']> & {

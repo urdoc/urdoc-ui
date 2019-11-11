@@ -2,13 +2,17 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 
 type Props = React.PropsWithRef<JSX.IntrinsicElements['input']> & {
-  inputSize?: 'medium' | 'large';
+  inputSize?: 'small' | 'medium' | 'large';
+  innerButtonn?: boolean;
   fluid?: boolean;
   label?: string | Element;
   error?: string | boolean;
 };
 
 const sizes = {
+  small: {
+    padding: '6px 16px 8px',
+  },
   medium: {
     padding: '11px 16px 15px',
   },
@@ -26,7 +30,7 @@ const StyledInput = styled.input<Props>(({ fluid, inputSize, error }) => {
   }
 
   let errorStyles = {};
-  console.log(error);
+
   if (error) {
     errorStyles = { backgroundColor: '#f1c4dd' };
   }

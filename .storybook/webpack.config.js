@@ -1,13 +1,17 @@
 module.exports = {
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "ts-loader"
-      }
-    ]
-  }
+        loader: 'ts-loader',
+      },
+      {
+        test: /\.svg$/,
+        loader: '@svgr/webpack',
+      },
+    ],
+  },
 };

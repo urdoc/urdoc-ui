@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/urdoc/urdoc-ui/compare/v0.0.1...v0.0.2) (2019-11-11)
+
+
+### Features
+
+* Add button variation. ([67ff7f7](https://github.com/urdoc/urdoc-ui/commit/67ff7f7f3b538931bcb0b6eb84c2c38d642cddd5))
+* Add small Input size. ([b85c0c9](https://github.com/urdoc/urdoc-ui/commit/b85c0c9acd3306df3e8e8a16b3f26bf936eed7cd))
+
 ### 0.0.1 (2019-10-14)
 
 

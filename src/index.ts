@@ -3,3 +3,4 @@ export { TextArea } from './components/TextArea';
 export { Select } from './components/Select';
 export { Button } from './components/Button';
 export { Dimmer } from './components/Dimmer';
+export { Loader } from './components/Loader';

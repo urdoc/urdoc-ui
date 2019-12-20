@@ -5,7 +5,7 @@ type Props = React.PropsWithRef<JSX.IntrinsicElements['input']> & {
   inputSize?: 'small' | 'medium' | 'large';
   innerButtonn?: boolean;
   fluid?: boolean;
-  label?: string | Element;
+  label?: string | React.ReactElement;
   error?: string | boolean;
 };
 

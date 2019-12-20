@@ -17,6 +17,18 @@ storiesOf('Button', module)
         <Button size="medium">{text('text', 'Send')}</Button>
         <Button size="small">{text('text', 'Send')}</Button>
       </WhiteWrapper>
+
+      <GrayWrapper>
+        <Button size="big" loading={true}>
+          {text('text', 'Send')}
+        </Button>
+        <Button size="medium" loading={true}>
+          {text('text', 'Send')}
+        </Button>
+        <Button size="small" loading={true}>
+          {text('text', 'Send')}
+        </Button>
+      </GrayWrapper>
     </>
   ));
 

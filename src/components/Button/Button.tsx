@@ -1,10 +1,25 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 
+import { Loader as _Loader } from '../Loader';
+
+const Wrapper = styled.div({
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+const Loader = styled(_Loader)({
+  position: 'absolute',
+  zIndex: 10,
+});
+
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
   size?: 'small' | 'medium' | 'big';
   fluid?: boolean;
-  color?: 'gray' | 'blue' | 'grayishCyan' | 'green' | 'red'; // default is grayishCyan
+  color?: 'gray' | 'blue' | 'green' | 'red'; // default is blue
+  loading?: boolean;
 };
 
 const master_sizes = {
@@ -26,17 +41,13 @@ const master_sizes = {
 };
 
 const master_colros = {
-  grayishCyan: {
-    color: '#ffffff',
-    backgroundColor: '#a3bdcd',
-  },
   gray: {
     color: '#ffffff',
     backgroundColor: '#adabab',
   },
   blue: {
     color: '#ffffff',
-    backgroundColor: '#0071bc',
+    backgroundColor: '#3db7e3',
   },
   green: {
     color: '#ffffff',
@@ -48,7 +59,7 @@ const master_colros = {
   },
 };
 
-const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
+const StyledButton = styled.button<Props>(({ size, fluid, color, loading }) => {
   // サイズ関連のプロパティ(default: medium)
   let sizeDependingProperties: {
     width?: string;
@@ -65,10 +76,15 @@ const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
     sizeDependingProperties.width = '100%';
   }
 
-  // 背景色、文字色の指定(default: grayishCyan)
-  let colors = master_colros['grayishCyan'];
+  // 背景色、文字色の指定(default: blue)
+  let colors = master_colros['blue'];
   if (color) {
     colors = master_colros[color];
+  }
+
+  // loader表示時は文字色を背景色と合わせる
+  if (loading) {
+    colors.color = colors.backgroundColor;
   }
 
   return {
@@ -94,5 +110,19 @@ const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
 });
 
 export const Button: React.FC<Props> = props => {
-  return <StyledButton {...props} />;
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  let loaderSize: 'tiny' | 'small' | 'medium' = 'small';
+  if (props.size === 'small') {
+    loaderSize = 'tiny';
+  } else if (props.size === 'big') {
+    loaderSize = 'medium';
+  }
+
+  return (
+    <Wrapper>
+      {props.loading && <Loader color="white" size={loaderSize} />}
+      <StyledButton {...props} ref={buttonRef} />
+    </Wrapper>
+  );
 };

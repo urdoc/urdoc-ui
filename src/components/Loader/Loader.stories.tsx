@@ -10,7 +10,9 @@ storiesOf('Loader', module)
   .add('all', () => (
     <>
       <WhiteWrapper>
+        <Loader size="small" />
         <Loader />
+        <Loader size="large" />
       </WhiteWrapper>
     </>
   ));

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/urdoc/urdoc-ui/compare/v0.0.6...v0.0.7) (2019-12-20)
+
+
+### Features
+
+* Add disabled styling to Button component. ([8efd52f](https://github.com/urdoc/urdoc-ui/commit/8efd52fa26c550c01e8d85116be74a7263d94b8a))
+
 ### [0.0.6](https://github.com/urdoc/urdoc-ui/compare/v0.0.5...v0.0.6) (2019-12-20)
 
 ### [0.0.5](https://github.com/urdoc/urdoc-ui/compare/v0.0.4...v0.0.5) (2019-12-20)

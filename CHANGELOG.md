@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/urdoc/urdoc-ui/compare/v0.0.4...v0.0.5) (2019-12-20)
+
+
+### Features
+
+* Add loading prop to Button, displaying loader in the button. ([625e531](https://github.com/urdoc/urdoc-ui/commit/625e531a2f880c988ac06fe5fca15d32cd14fe9a))
+
 ### [0.0.4](https://github.com/urdoc/urdoc-ui/compare/v0.0.3...v0.0.4) (2019-12-20)
 
 

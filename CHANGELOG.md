@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/urdoc/urdoc-ui/compare/v0.0.3...v0.0.4) (2019-12-20)
+
+
+### Features
+
+* Add Loader component. ([5600bd0](https://github.com/urdoc/urdoc-ui/commit/5600bd06fe37c9d8695733c51d97b39760ecc6c0))
+
+
+### Bug Fixes
+
+* Input component's label props now receive ReactElement. ([7642ba4](https://github.com/urdoc/urdoc-ui/commit/7642ba44325e6859f9e872886e0eb6a22ad92740))
+
 ### [0.0.3](https://github.com/urdoc/urdoc-ui/compare/v0.0.2...v0.0.3) (2019-12-20)
 
 

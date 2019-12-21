@@ -34,7 +34,10 @@ const StyledInput = styled.input<Props>(({ fluid, inputSize, error }) => {
   let errorStyles = {};
 
   if (error) {
-    errorStyles = { backgroundColor: '#f1c4dd' };
+    errorStyles = {
+      backgroundColor: '#f1c4dd',
+      boxShadow: '0 0 3px 2px rgba(212, 157, 185, 0.92)',
+    };
   }
 
   return {
@@ -80,9 +83,10 @@ const Label = styled.label({
 const Error = styled.p({
   color: '#e33d64',
   fontFamily: 'linotype-vectora, sans-serif',
-  fontSize: '16px',
+  fontSize: '14px',
   fontWeight: 300,
-  marginTop: '16px',
+  lineHeight: '16px',
+  marginTop: '8px',
 });
 
 export const Input = React.forwardRef<HTMLInputElement, Props>(

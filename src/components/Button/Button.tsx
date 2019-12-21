@@ -2,12 +2,25 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 
 import color from '../../color/color';
+import { Loader as _Loader } from '../Loader';
+
+const Wrapper = styled.div({
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+const Loader = styled(_Loader)({
+  position: 'absolute',
+  zIndex: 10,
+});
 
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
   size?: 'small' | 'medium' | 'big';
   fluid?: boolean;
-  color?: 'gray' | 'blue' | 'grayishCyan' | 'green' | 'red'; // default is grayishCyan
-  width?: number;
+  color?: 'gray' | 'blue' | 'green' | 'red'; // default is blue
+  loading?: boolean;
 };
 
 const master_sizes = {
@@ -33,17 +46,13 @@ const master_colors = {
     color: '#ffffff',
     backgroundColor: color.brandColor,
   },
-  grayishCyan: {
-    color: '#ffffff',
-    backgroundColor: '#a3bdcd',
-  },
   gray: {
     color: '#ffffff',
     backgroundColor: '#adabab',
   },
   blue: {
     color: '#ffffff',
-    backgroundColor: '#0071bc',
+    backgroundColor: '#3db7e3',
   },
   green: {
     color: '#ffffff',
@@ -55,55 +64,73 @@ const master_colors = {
   },
 };
 
-const StyledButton = styled.button<Props>(({ size, fluid, color, width }) => {
-  // サイズ関連のプロパティ(default: medium)
-  let sizeDependingProperties: {
-    width?: string;
-    height: string;
-    fontSize: string;
-    padding: string;
-  } = master_sizes['medium'];
-  if (size) {
-    sizeDependingProperties = master_sizes[size];
+const StyledButton = styled.button<Props>(
+  ({ size, fluid, color, loading, disabled }) => {
+    // サイズ関連のプロパティ(default: medium)
+    let sizeDependingProperties: {
+      width?: string;
+      height: string;
+      fontSize: string;
+      padding: string;
+    } = master_sizes['medium'];
+    if (size) {
+      sizeDependingProperties = master_sizes[size];
+    }
+
+    // fluidの指定がある時はwidth: 100%
+    if (fluid) {
+      sizeDependingProperties.width = '100%';
+    }
+
+    // 背景色、文字色の指定(default: mainColor)
+    let colors = master_colors['mainColor'];
+    if (color) {
+      colors = master_colors[color];
+    }
+
+    // loader表示時は文字色を背景色と合わせる
+    // if (loading) {
+
+    // colors.color = colors.backgroundColor;
+    // }
+
+    return {
+      borderRadius: '48px',
+      position: 'relative',
+      cursor: loading || disabled ? 'default' : 'pointer',
+      border: 'none',
+      boxShadow:
+        'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
+      fontSize: '20px',
+      fontFamily: 'acumin-pro-semi-condensed, sans-serif',
+      fontWeight: 600,
+      lineHeight: '113%',
+      letterSpacing: '0',
+      '&:disabled': {
+        opacity: 0.4,
+      },
+
+      opacity: loading || disabled ? 0.45 : 1,
+      ...sizeDependingProperties,
+      ...colors,
+    };
   }
-
-  // fluidの指定がある時はwidth: 100%
-  if (fluid) {
-    sizeDependingProperties.width = '100%';
-  }
-
-  // 背景色、文字色の指定(default: mainColor)
-  let colors = master_colors['mainColor'];
-  if (color) {
-    colors = master_colors[color];
-  }
-
-  if (width) {
-    sizeDependingProperties.width = `${width}px`;
-  }
-
-  return {
-    borderRadius: '48px',
-    position: 'relative',
-    cursor: 'pointer',
-    border: 'none',
-    boxShadow:
-      'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
-
-    fontSize: '20px',
-    fontFamily: 'acumin-pro-semi-condensed, sans-serif',
-    fontWeight: 600,
-    lineHeight: '113%',
-    letterSpacing: '0',
-    '&:disabled': {
-      opacity: 0.4,
-    },
-
-    ...sizeDependingProperties,
-    ...colors,
-  };
-});
+);
 
 export const Button: React.FC<Props> = props => {
-  return <StyledButton {...props} />;
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  let loaderSize: 'tiny' | 'small' | 'medium' = 'small';
+  if (props.size === 'small') {
+    loaderSize = 'tiny';
+  } else if (props.size === 'big') {
+    loaderSize = 'medium';
+  }
+
+  return (
+    <Wrapper>
+      {props.loading && <Loader color="white" size={loaderSize} />}
+      <StyledButton {...props} ref={buttonRef} />
+    </Wrapper>
+  );
 };

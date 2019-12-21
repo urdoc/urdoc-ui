@@ -1,31 +1,38 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 
+import color from '../../color/color';
+
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
   size?: 'small' | 'medium' | 'big';
   fluid?: boolean;
   color?: 'gray' | 'blue' | 'grayishCyan' | 'green' | 'red'; // default is grayishCyan
+  width?: number;
 };
 
 const master_sizes = {
   small: {
     height: '32px',
     fontSize: '16px',
-    padding: '1px 24px 3px',
+    padding: '0 24px',
   },
   medium: {
     height: '51px',
     fontSize: '16px',
-    padding: '1px 24px 3px',
+    padding: '0 24px',
   },
   big: {
-    height: '96px',
-    fontSize: '28px',
-    padding: '1px 48px 3px',
+    height: '48px',
+    fontSize: '20px',
+    padding: '0 48px',
   },
 };
 
-const master_colros = {
+const master_colors = {
+  mainColor: {
+    color: '#ffffff',
+    backgroundColor: color.brandColor,
+  },
   grayishCyan: {
     color: '#ffffff',
     backgroundColor: '#a3bdcd',
@@ -48,7 +55,7 @@ const master_colros = {
   },
 };
 
-const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
+const StyledButton = styled.button<Props>(({ size, fluid, color, width }) => {
   // サイズ関連のプロパティ(default: medium)
   let sizeDependingProperties: {
     width?: string;
@@ -65,10 +72,14 @@ const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
     sizeDependingProperties.width = '100%';
   }
 
-  // 背景色、文字色の指定(default: grayishCyan)
-  let colors = master_colros['grayishCyan'];
+  // 背景色、文字色の指定(default: mainColor)
+  let colors = master_colors['mainColor'];
   if (color) {
-    colors = master_colros[color];
+    colors = master_colors[color];
+  }
+
+  if (width) {
+    sizeDependingProperties.width = `${width}px`;
   }
 
   return {
@@ -79,9 +90,9 @@ const StyledButton = styled.button<Props>(({ size, fluid, color }) => {
     boxShadow:
       'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
 
-    fontSize: '28px',
+    fontSize: '20px',
     fontFamily: 'acumin-pro-semi-condensed, sans-serif',
-    fontWeight: 300,
+    fontWeight: 600,
     lineHeight: '113%',
     letterSpacing: '0',
     '&:disabled': {

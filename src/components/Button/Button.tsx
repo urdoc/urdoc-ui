@@ -112,8 +112,6 @@ const StyledButton = styled.button<Props>(
 );
 
 export const Button: React.FC<Props> = props => {
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-
   let loaderSize: 'tiny' | 'small' | 'medium' = 'small';
   if (props.size === 'small') {
     loaderSize = 'tiny';
@@ -124,7 +122,7 @@ export const Button: React.FC<Props> = props => {
   return (
     <Wrapper>
       {props.loading && <Loader color="white" size={loaderSize} />}
-      <StyledButton {...props} ref={buttonRef} />
+      <StyledButton {...props} />
     </Wrapper>
   );
 };

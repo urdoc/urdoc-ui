@@ -52,7 +52,7 @@ const master_colors = {
   },
   blue: {
     color: '#ffffff',
-    backgroundColor: '#3db7e3',
+    backgroundColor: color.brandColor,
   },
   green: {
     color: '#ffffff',

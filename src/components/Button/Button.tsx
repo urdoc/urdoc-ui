@@ -88,12 +88,6 @@ const StyledButton = styled.button<Props>(
       colors = master_colors[color];
     }
 
-    // loader表示時は文字色を背景色と合わせる
-    // if (loading) {
-
-    // colors.color = colors.backgroundColor;
-    // }
-
     return {
       borderRadius: '48px',
       position: 'relative',
@@ -124,7 +118,7 @@ export const Button: React.FC<Props> = props => {
   if (props.size === 'small') {
     loaderSize = 'tiny';
   } else if (props.size === 'big') {
-    loaderSize = 'medium';
+    loaderSize = 'small';
   }
 
   return (

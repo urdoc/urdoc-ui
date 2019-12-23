@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/urdoc/urdoc-ui/compare/v0.0.7...v0.0.8) (2019-12-23)
+
+
+### Features
+
+* loaderのサイズを修正 ([8e7426c](https://github.com/urdoc/urdoc-ui/commit/8e7426c6b1d047757c62655913b96a2b700f2f33))
+* Tweaked Input error pattern ([75398a0](https://github.com/urdoc/urdoc-ui/commit/75398a00613b95e0e325c2ecf88770477be6c4af))
+* 一旦ボタンの高さ調整 ([f859b86](https://github.com/urdoc/urdoc-ui/commit/f859b8673f2c0d5f0f5dc43e9ee7811cd0bfca8b))
+
+
+### Bug Fixes
+
+* Button component、blue指定時の色もbrand colorを使用するように ([45b0924](https://github.com/urdoc/urdoc-ui/commit/45b0924805be446ecb133e1fee5327997a3572a5))
+* refの使用をなくす ([62bddc6](https://github.com/urdoc/urdoc-ui/commit/62bddc60c7eef020774e4cb523706f00bfd38db3))
+
 ### [0.0.7](https://github.com/urdoc/urdoc-ui/compare/v0.0.6...v0.0.7) (2019-12-20)
 
 

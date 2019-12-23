@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 
+import color from '../../color/color';
 import { Loader as _Loader } from '../Loader';
 
 const Wrapper = styled.div({
@@ -26,28 +27,32 @@ const master_sizes = {
   small: {
     height: '32px',
     fontSize: '16px',
-    padding: '1px 24px 3px',
+    padding: '0 24px',
   },
   medium: {
-    height: '51px',
+    height: '36px',
     fontSize: '16px',
-    padding: '1px 24px 3px',
+    padding: '0 24px',
   },
   big: {
-    height: '96px',
-    fontSize: '28px',
-    padding: '1px 48px 3px',
+    height: '48px',
+    fontSize: '20px',
+    padding: '0 48px',
   },
 };
 
-const master_colros = {
+const master_colors = {
+  mainColor: {
+    color: '#ffffff',
+    backgroundColor: color.brandColor,
+  },
   gray: {
     color: '#ffffff',
     backgroundColor: '#adabab',
   },
   blue: {
     color: '#ffffff',
-    backgroundColor: '#3db7e3',
+    backgroundColor: color.brandColor,
   },
   green: {
     color: '#ffffff',
@@ -77,17 +82,11 @@ const StyledButton = styled.button<Props>(
       sizeDependingProperties.width = '100%';
     }
 
-    // 背景色、文字色の指定(default: blue)
-    let colors = master_colros['blue'];
+    // 背景色、文字色の指定(default: mainColor)
+    let colors = master_colors['mainColor'];
     if (color) {
-      colors = master_colros[color];
+      colors = master_colors[color];
     }
-
-    // loader表示時は文字色を背景色と合わせる
-    // if (loading) {
-
-    // colors.color = colors.backgroundColor;
-    // }
 
     return {
       borderRadius: '48px',
@@ -96,10 +95,9 @@ const StyledButton = styled.button<Props>(
       border: 'none',
       boxShadow:
         'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
-
-      fontSize: '28px',
+      fontSize: '20px',
       fontFamily: 'acumin-pro-semi-condensed, sans-serif',
-      fontWeight: 300,
+      fontWeight: 600,
       lineHeight: '113%',
       letterSpacing: '0',
       '&:disabled': {
@@ -114,19 +112,17 @@ const StyledButton = styled.button<Props>(
 );
 
 export const Button: React.FC<Props> = props => {
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-
   let loaderSize: 'tiny' | 'small' | 'medium' = 'small';
   if (props.size === 'small') {
     loaderSize = 'tiny';
   } else if (props.size === 'big') {
-    loaderSize = 'medium';
+    loaderSize = 'small';
   }
 
   return (
     <Wrapper>
       {props.loading && <Loader color="white" size={loaderSize} />}
-      <StyledButton {...props} ref={buttonRef} />
+      <StyledButton {...props} />
     </Wrapper>
   );
 };

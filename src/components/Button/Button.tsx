@@ -30,7 +30,7 @@ const master_sizes = {
     padding: '0 24px',
   },
   medium: {
-    height: '51px',
+    height: '36px',
     fontSize: '16px',
     padding: '0 24px',
   },

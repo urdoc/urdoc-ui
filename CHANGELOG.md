@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/urdoc/urdoc-ui/compare/v0.0.9...v0.0.10) (2020-01-12)
+
+
+### Features
+
+* Selectのstyleを更新 ([7f25561](https://github.com/urdoc/urdoc-ui/commit/7f25561cbc5eb5ea5c6d812b39a5ea0c3d6067b8))
+
 ### [0.0.9](https://github.com/urdoc/urdoc-ui/compare/v0.0.7...v0.0.9) (2019-12-23)
 
 

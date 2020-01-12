@@ -1,11 +1,23 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 
-import icon from './selectIcon';
-
 type Props = React.PropsWithRef<JSX.IntrinsicElements['select']> & {
   fluid?: boolean;
 };
+
+const Container = styled.span({
+  position: 'relative',
+  '&:after': {
+    position: 'absolute',
+    content: '""',
+    display: 'block',
+    top: 'calc(calc(100% - 6px) / 2)',
+    right: '20px',
+    borderLeft: '6px solid transparent',
+    borderRight: '6px solid transparent',
+    borderTop: '6px solid #8E99A3',
+  },
+});
 
 const StyledSelect = styled.select<Props>(({ fluid }) => {
   const options: { [key: string]: any } = {};
@@ -14,33 +26,28 @@ const StyledSelect = styled.select<Props>(({ fluid }) => {
   }
 
   return {
+    position: 'relative',
+
     // font
-    color: '#59595b',
-    fontSize: '24px',
-    fontFamily: 'acumin-pro-semi-condensed, sans-serif',
-    fontWeight: 300,
-    lineHeight: '32px',
+    color: '#333E4A',
+    fontSize: '16px',
+    fontFamily: 'SF Pro Display, sans-serif',
+    fontWeight: 400,
+    lineHeight: '24px',
 
     // sizing
-    padding: '6px 48px 10px 22px',
+    padding: '11px 48px 11px 16px',
     boxSizing: 'border-box',
     margin: 0,
 
     // border
-    border: 'solid 1px #adabab',
-    boxShadow:
-      'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
-    borderRadius: '40px',
+    border: '1px solid transparent',
+    borderRadius: '8px',
 
     appearance: 'none',
 
     // background
-    backgroundColor: '#fff',
-    backgroundRepeat: 'no-repeat, repeat',
-    backgroundPosition: 'right 0 top 50%, 0 0',
-    backgroundSize: '48px auto, 100%',
-
-    backgroundImage: icon,
+    backgroundColor: '#F0F3F5',
 
     ...options,
   };
@@ -49,9 +56,11 @@ const StyledSelect = styled.select<Props>(({ fluid }) => {
 export const Select = React.forwardRef<HTMLSelectElement, Props>(
   ({ children, ...props }, ref) => {
     return (
-      <StyledSelect ref={ref} {...props}>
-        {children}
-      </StyledSelect>
+      <Container>
+        <StyledSelect ref={ref} {...props}>
+          {children}
+        </StyledSelect>
+      </Container>
     );
   }
 );

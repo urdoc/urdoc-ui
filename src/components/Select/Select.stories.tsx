@@ -10,10 +10,18 @@ storiesOf('Select', module)
   .add('all', () => (
     <>
       <GrayWrapper>
-        <Select></Select>
+        <Select>
+          <option>option</option>
+          <option>option1</option>
+          <option>option2</option>
+        </Select>
       </GrayWrapper>
       <WhiteWrapper>
-        <Select></Select>
+        <Select>
+          <option>option</option>
+          <option>option1</option>
+          <option>option2</option>
+        </Select>
       </WhiteWrapper>
     </>
   ));

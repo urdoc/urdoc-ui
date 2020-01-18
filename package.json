@@ -1,6 +1,6 @@
 {
   "name": "urdoc-ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",

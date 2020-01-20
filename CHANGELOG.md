@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/urdoc/urdoc-ui/compare/v0.0.14...v0.0.15) (2020-01-20)
+
+
+### Features
+
+* Add white color to Button component. ([f21ed0e](https://github.com/urdoc/urdoc-ui/commit/f21ed0e8bdb7faa73b7d195e4ec8393cf8387f05))
+
 ### [0.0.14](https://github.com/urdoc/urdoc-ui/compare/v0.0.13...v0.0.14) (2020-01-18)
 
 ### [0.0.13](https://github.com/urdoc/urdoc-ui/compare/v0.0.12...v0.0.13) (2020-01-18)

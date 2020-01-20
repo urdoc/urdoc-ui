@@ -19,7 +19,7 @@ const Loader = styled(_Loader)({
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
   size?: 'small' | 'medium' | 'big';
   fluid?: boolean;
-  color?: 'gray' | 'blue' | 'green' | 'red'; // default is blue
+  color?: 'gray' | 'blue' | 'green' | 'red' | 'white'; // default is blue
   loading?: boolean;
 };
 
@@ -42,25 +42,30 @@ const master_sizes = {
 };
 
 const master_colors = {
-  mainColor: {
-    color: '#ffffff',
-    backgroundColor: color.brandColor,
-  },
   gray: {
     color: '#ffffff',
     backgroundColor: '#adabab',
+    border: 'none',
   },
   blue: {
     color: '#ffffff',
     backgroundColor: color.brandColor,
+    border: 'none',
   },
   green: {
     color: '#ffffff',
     backgroundColor: '#50E68A',
+    border: 'none',
   },
   red: {
     color: '#ffffff',
     backgroundColor: '#E65050',
+    border: 'none',
+  },
+  white: {
+    color: '#8e99a3',
+    backgroundColor: '#ffffff',
+    border: 'solid 1px #8e99a3',
   },
 };
 
@@ -82,8 +87,8 @@ const StyledButton = styled.button<Props>(
       sizeDependingProperties.width = '100%';
     }
 
-    // 背景色、文字色の指定(default: mainColor)
-    let colors = master_colors['mainColor'];
+    // 背景色、文字色の指定(default: blue)
+    let colors = master_colors['blue'];
     if (color) {
       colors = master_colors[color];
     }
@@ -92,9 +97,6 @@ const StyledButton = styled.button<Props>(
       borderRadius: '48px',
       position: 'relative',
       cursor: loading || disabled ? 'default' : 'pointer',
-      border: 'none',
-      boxShadow:
-        'inset 1px 1px 7px rgba(255, 255, 255, 0.16), inset -1px -1px 7px rgba(0, 0, 0, 0.16)',
       fontSize: '20px',
       fontFamily: 'acumin-pro-semi-condensed, sans-serif',
       fontWeight: 600,

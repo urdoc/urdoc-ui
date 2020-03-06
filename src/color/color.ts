@@ -3,5 +3,5 @@ export default {
   primaryText: '#333e4a',
   secondaryText: '#707070',
   teritiaryText: '#8E99A3',
-  inputBg: '#F0F3F5',
+  inputBg: '#e4eaed',
 };

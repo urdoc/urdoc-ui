@@ -17,13 +17,18 @@ const Loader = styled(_Loader)({
 });
 
 type Props = React.PropsWithoutRef<JSX.IntrinsicElements['button']> & {
-  size?: 'small' | 'medium' | 'big';
+  size?: 'tiny' | 'small' | 'medium' | 'big';
   fluid?: boolean;
   color?: 'gray' | 'blue' | 'green' | 'red' | 'white'; // default is blue
   loading?: boolean;
 };
 
 const master_sizes = {
+  tiny: {
+    height: '24px',
+    fontSize: '12px',
+    padding: '5px 9px',
+  },
   small: {
     height: '32px',
     fontSize: '16px',
@@ -98,7 +103,6 @@ const StyledButton = styled.button<Props>(
       position: 'relative',
       cursor: loading || disabled ? 'default' : 'pointer',
       fontSize: '20px',
-      fontFamily: 'acumin-pro-semi-condensed, sans-serif',
       fontWeight: 600,
       lineHeight: '113%',
       letterSpacing: '0',

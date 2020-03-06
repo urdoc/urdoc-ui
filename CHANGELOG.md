@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/urdoc/urdoc-ui/compare/v0.0.15...v0.0.16) (2020-03-06)
+
+
+### Features
+
+* Buttonにtinyのサイズを追加、微修正 ([02a825c](https://github.com/urdoc/urdoc-ui/commit/02a825c73f5e71613ba686c89ded4ec96249a4d2))
+* 色の調整 ([ab7ae5c](https://github.com/urdoc/urdoc-ui/commit/ab7ae5c0ca568a4444e66a166434f4052e7501e3))
+
 ### [0.0.15](https://github.com/urdoc/urdoc-ui/compare/v0.0.14...v0.0.15) (2020-01-20)
 
 

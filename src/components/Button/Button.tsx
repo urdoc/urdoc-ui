@@ -9,6 +9,8 @@ const Wrapper = styled.div({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  flex: 1,
+  width: '100%',
 });
 
 const Loader = styled(_Loader)({

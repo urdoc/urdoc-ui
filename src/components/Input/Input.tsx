@@ -8,7 +8,7 @@ type Props = React.PropsWithRef<JSX.IntrinsicElements['input']> & {
   innerButtonn?: boolean;
   fluid?: boolean;
   label?: string | React.ReactElement;
-  error?: string | boolean;
+  error?: string | React.ReactElement | boolean;
 };
 
 const sizes = {
@@ -95,7 +95,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
       <Wrapper>
         {label && typeof label === 'string' ? <Label>{label}</Label> : label}
         <StyledInput ref={ref} error={error} {...props} />
-        {typeof error === 'string' && <Error>{error}</Error>}
+        {error && typeof error === 'string' ? <Error>{error}</Error> : error}
       </Wrapper>
     );
   }
